@@ -164,6 +164,13 @@ git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go package/ddnsgo
 # git clone --depth 1 https://github.com/sbwml/luci-app-alist package/alist
 sed -i 's/services/nas/g' feeds/luci/applications/luci-app-alist/root/usr/share/luci/menu.d/*.json
 
+# openlist
+# rm -rf feeds/packages/net/openlist
+# rm -rf feeds/luci/applications/luci-app-openlist
+sed -i 's/services/nas/g' feeds/luci/applications/luci-app-openlist/root/usr/share/luci/menu.d/luci-app-openlist.json
+sed -i 's/"title": "OpenList",/&\n        "order": 0,/g' feeds/luci/applications/luci-app-openlist/root/usr/share/luci/menu.d/luci-app-openlist.json
+
+
 # 启用frp, luci用自带, frp第三方更新版本
 rm -rf feeds/packages/net/frp
 rm -rf feeds/luci/applications/luci-app-frps
