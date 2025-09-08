@@ -59,6 +59,13 @@ find ./ | grep Makefile | grep mosdns | xargs rm -f
 rm -rf feeds/packages/net/nps
 rm -rf feeds/luci/applications/luci-app-nps
 
+# Openlist
+# rm -rf feeds/luci/applications/luci-app-openlist
+# git clone https://github.com/sbwml/luci-app-openlist2 -b lua feeds/luci/applications/luci-app-openlist
+sed -i 's/"admin", "services", "openlist"/"admin", "nas", "openlist"/g' feeds/luci/applications/luci-app-openlist/luasrc/controller/openlist.lua
+sed -i 's|("OpenList"), 99|("OpenList"), 0|g' feeds/luci/applications/luci-app-openlist/luasrc/controller/openlist.lua
+
+
 git clone --depth=1 https://github.com/RayleanB/packages package/RB
 mv package/RB/* package
 rm -rf package/RB
