@@ -3,7 +3,7 @@ name: N1-IMM-24.10-mini
 on:
   workflow_dispatch:
   schedule:
-#    - cron: "40 7 */5 * *"  
+    - cron: "40 7 */5 * *"  
 
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
